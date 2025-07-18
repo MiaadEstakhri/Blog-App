@@ -6,14 +6,24 @@ const { UserModel } = require("./app/models/user");
 const { PostModel } = require("./app/models/post");
 const { CommentModel } = require("./app/models/comment");
 const { CategoryModel } = require("./app/models/category");
-const Application = require("./app/server");
+const mongoose = require("mongoose");
 
 (async () => {
-  new Application();
+  await mongoose.connect("mongodb://localhost:27017/next-blog-app", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+
+  await UserModel.deleteMany({});
+  await PostModel.deleteMany({});
+  await CommentModel.deleteMany({});
+  await CategoryModel.deleteMany({});
   await UserModel.insertMany(users);
   await PostModel.insertMany(posts);
   await CommentModel.insertMany(comments);
   await CategoryModel.insertMany(categories);
+
+  await mongoose.disconnect();
 })()
   .then(() => {
     console.log("DATA INSERTED SUCCESSFULLY.");
