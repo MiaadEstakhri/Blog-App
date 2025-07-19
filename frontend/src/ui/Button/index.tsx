@@ -20,6 +20,7 @@ export function Button({
       className={`btn ${btnType[variant]} ${className}`}
       onClick={onClick}
       disabled={disabled}
+      {...rest}
     >
       {children}
     </button>
