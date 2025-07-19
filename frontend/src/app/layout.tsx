@@ -26,9 +26,10 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body
-        className={`${vazirFont.variable} ${geistSans.variable} ${roboto.variable} font-sans`}
+        className={`${vazirFont.variable} ${geistSans.variable} ${roboto.variable} font-sans min-h-screen`}
       >
-        {children}
+        <div>header</div>
+        <div className="container xl:max-w-screen-xl">{children}</div>
       </body>
     </html>
   );
