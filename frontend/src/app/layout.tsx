@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Roboto } from "next/font/google";
 import vazirFont from "@constants/localFonts";
 import "../styles/globals.css";
+import { Header } from "@components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${vazirFont.variable} ${geistSans.variable} ${roboto.variable} font-sans min-h-screen`}
       >
-        <div>header</div>
+        <Header />
         <div className="container xl:max-w-screen-xl">{children}</div>
       </body>
     </html>
