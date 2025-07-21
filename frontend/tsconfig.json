@@ -23,7 +23,8 @@
       "@components": ["components/index.ts"],
       "@constants/*": ["constants/*"],
       "@ui": ["ui/index.ts"],
-      "@app/*": ["app/*"]
+      "@app/*": ["app/*"],
+      "@hooks/*": ["hooks/*"]
     }
   },
   "include": [
