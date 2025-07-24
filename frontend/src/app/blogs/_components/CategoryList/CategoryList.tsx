@@ -8,6 +8,9 @@ async function CategoryList() {
   const { categories } = res.data.data;
   return (
     <ul className="space-y-4">
+      <li>
+        <Link href="/blogs">همه</Link>
+      </li>
       {categories?.map((item: CategoryType) => (
         <li key={item._id}>
           <Link href={`/blogs/category/${item.slug}`}>{item.title}</Link>
