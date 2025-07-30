@@ -4,7 +4,9 @@ import axios from "axios";
 import { CategoryType } from "./categoryList.type";
 
 async function CategoryList() {
-  const res = await axios.get("http://localhost:5005/api/category/list");
+  const res = await axios.get(
+    `${process.env.NEXT_PUBLIC_BASE_URL}/category/list`
+  );
   const { categories } = res.data.data;
   return (
     <ul className="space-y-4">
