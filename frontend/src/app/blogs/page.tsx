@@ -1,15 +1,14 @@
-import axios from "axios";
-import React from "react";
+import React, { Suspense } from "react";
+import PostList from "./_components/PostList/PostList";
+import { Spinner } from "@ui";
 
 async function BlogPage() {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/post/list`);
-  const { posts } = res.data.data;
   return (
     <div>
-      {posts?.map((item: any) => (
-        <div key={item._id}>{item.title}</div>
-      ))}
+      <p>Blog Page</p>
+      <Suspense fallback={<Spinner />}>
+        <PostList />
+      </Suspense>
     </div>
   );
 }
