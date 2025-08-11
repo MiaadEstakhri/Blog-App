@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [new URL("http://localhost:5005/uploads/coverImage/**")],
+    remotePatterns: [new URL("http://localhost:5005/uploads/**")],
   },
 };
 
