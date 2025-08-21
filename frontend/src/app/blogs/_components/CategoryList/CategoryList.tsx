@@ -4,6 +4,8 @@ import axios from "axios";
 import { CategoryType } from "./categoryList.type";
 
 async function CategoryList() {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   const res = await axios.get(
     `${process.env.NEXT_PUBLIC_BASE_URL}/category/list`
   );
