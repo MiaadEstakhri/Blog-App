@@ -4,6 +4,7 @@ import axios from "axios";
 import { PostListType } from "./postList.type";
 import { ClockIcon } from "@heroicons/react/24/outline";
 import { Avatar, CoverImage } from "@ui";
+import Author from "../Author/Author";
 
 async function PostList() {
   await new Promise((resolve) => setTimeout(resolve, 3000));
@@ -26,12 +27,7 @@ async function PostList() {
               </h2>
             </Link>
             <div className="flex justify-between items-center">
-              <div className="flex items-center gap-x-1">
-                <Avatar src={post?.author?.avatarUrl} width={24} />
-                <span className="text-sm text-secondary-500">
-                  {post?.author?.name}
-                </span>
-              </div>
+              <Author {...post.author} />
               <div className="flex items-center text-[10px] text-secondary-500">
                 <ClockIcon className="w-4 h-4 stork-secondary-500 mx-1" />
                 <span className="">خواندن</span>
