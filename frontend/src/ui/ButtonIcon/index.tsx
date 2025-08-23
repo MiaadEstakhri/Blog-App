@@ -1,12 +1,5 @@
 import React from "react";
-
-type BtnTypeProps = {
-  primary?: string;
-  secondary?: string;
-  outline?: string;
-  red?: string;
-  danger?: string;
-};
+import { BtnTypeProps, ButtonIconProps } from "./buttonIcon.type";
 
 const btnType: BtnTypeProps = {
   primary:
@@ -17,15 +10,6 @@ const btnType: BtnTypeProps = {
     "border border-secondary-200 text-secondary-500 hover:bg-secondary-200",
   red: "bg-red-100 text-red-500 hover:bg-red-500 hover:text-white",
   danger: "border border-red-100 text-red-500",
-};
-
-type VariantProps = "primary" | "secondary" | "outline" | "red" | "danger";
-
-type ButtonIconProps = {
-  className: string;
-  variant: VariantProps;
-  children: React.ReactNode;
-  onClick: () => void;
 };
 
 export function ButtonIcon({
